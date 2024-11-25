@@ -1,0 +1,17 @@
+services:
+
+  webapp:
+    build: ./app
+    image: europe-west1-docker.pkg.dev/aso-git-daniel/webs/webapp:latest
+    volumes:
+      - ./app:/app
+    networks:
+      - web_network
+    environment:
+      - NAME=Daniel
+      - PORT=8080
+    ports:
+      - 80:8080
+
+networks:
+  web_network:

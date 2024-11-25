@@ -1,0 +1,10 @@
+#center-div {
+    text-align:center; /* center horizontally */
+    vertical-align:middle; /* center vertically */
+}
+#center-div p {
+    display:inline; /* you might want to use this instead of "inline-block" */
+    text-align:center; /* center horizontally */
+    vertical-align:middle; /* center vertically */
+    font-size: 4vmin;
+}

@@ -1,5 +1,12 @@
 services:
 
+  redis:
+    image: redis:latest
+    networks:
+      - web_network
+    expose:
+      - 6379
+
   webapp:
     build: ./app
     image: europe-west1-docker.pkg.dev/aso-git-daniel/webs/webapp:latest
@@ -10,6 +17,8 @@ services:
     environment:
       - NAME=Daniel
       - PORT=8080
+      - REDIS_LOCATION=redis
+      - REDIS_PORT=6379
     ports:
       - 80:8080
 
